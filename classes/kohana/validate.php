@@ -985,7 +985,7 @@ class Kohana_Validate extends ArrayObject {
 				foreach ($params as $key => $value)
 				{
 					// Check if a label for this parameter exists
-					if (isset($this->_labels[$value]))
+					if (!is_array($value) && isset($this->_labels[$value]))
 					{
 						$value = $this->_labels[$value];
 
